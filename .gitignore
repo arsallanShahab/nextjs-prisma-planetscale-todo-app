@@ -34,3 +34,46 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# Password files
+*passwords.txt
+*PASSWORD.txt
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+*.sql
+*.SQL
+*.db3
+*.DB3
+*.db-journal
+*.db-shm
+*.db-wal
+
+# Prisma files
+prisma/migrations
+prisma/dev.db
+prisma/.env
+prisma/.env.local
+
+# Docker Compose files
+docker-compose.yml
+docker-compose.yaml
+
+# Docker files
+Dockerfile
+Dockerfile.dev
+*.yml
+
+# Docker Postgres Volume
+pgdata
+
+# Docker Compose Postgres Volume
+postgres-data
+
+# ENV
+.env
+
+# Files
+/src/lib/hooks
