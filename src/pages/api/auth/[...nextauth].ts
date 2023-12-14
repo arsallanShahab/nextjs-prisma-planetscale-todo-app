@@ -1,7 +1,6 @@
-import { Todo } from "@/lib/types";
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import { PrismaClient } from "@prisma/client";
-import type { AuthOptions, Session, Token, User } from "next-auth";
+import type { AuthOptions, Session, User } from "next-auth";
 import nextAuth from "next-auth";
 import GoogleProvider from "next-auth/providers/google";
 
@@ -38,7 +37,7 @@ export const authOptions = {
       user,
     }: {
       session: Session;
-      token: Token;
+      token: any;
       user: User;
     }) {
       console.log(token, "token");
