@@ -34,10 +34,6 @@ const VARIANTS = {
     y: 100,
     opacity: 0,
     scale: 0.6,
-    transition: {
-      duration: 0.3,
-      ease: [0.87, 0, 0.13, 1],
-    },
   },
 };
 
@@ -105,7 +101,7 @@ const ReorderItem: FC<Props> = ({ todo, i, todos, setTodos }) => {
       exit="exit"
       variants={VARIANTS}
       transition={{
-        duration: 0.5,
+        duration: 0.3,
         delay: i * 0.05,
         ease: [0.87, 0, 0.13, 1],
       }}

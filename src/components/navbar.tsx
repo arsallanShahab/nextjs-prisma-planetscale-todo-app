@@ -22,16 +22,19 @@ function Navbar({}: Props) {
       <div className="max-w-screen-2xl mx-auto px-5 sm:px-10">
         <div className="flex justify-between items-center pt-5 pb-2.5 sm:py-5">
           <div className="flex items-center">
-            <h3 className="text-2xl font-bold dark:text-amethyst-600">
+            <Link
+              href={"/"}
+              className="text-2xl font-bold dark:text-amethyst-600"
+            >
               UiTodo
-            </h3>
+            </Link>
           </div>
           <div className="flex items-center gap-3">
             <ModeToggle />
             {status === "unauthenticated" && (
               <Link
                 href={"/api/auth/signin"}
-                className="px-5 py-2 rounded-lg text-white bg-amethyst-600 dark:bg-amethyst-600 dark:text-zinc-900 hover:bg-amethyst-700 active:bg-amethyst-600 active:scale-95"
+                className="px-6 py-2 text-sm rounded-lg text-white bg-amethyst-600 dark:bg-amethyst-600 dark:text-zinc-900 hover:bg-amethyst-700 active:bg-amethyst-600 active:scale-95"
               >
                 Login
               </Link>
