@@ -115,7 +115,7 @@ const Home = () => {
   if (status === "loading") {
     return (
       <div className="py-20 px-5 flex justify-center items-center">
-        <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-amethyst-100">
+        <div className="w-10 h-10 flex items-center justify-center rounded-xl bg-white border border-amethyst-100 dark:bg-zinc-700 dark:border-zinc-800">
           <BadgeX className="w-5 h-5 animate-spin text-amethyst-600" />
         </div>
       </div>
@@ -138,7 +138,7 @@ const Home = () => {
             layout="size"
             className="w-full relative h-full origin-top"
           >
-            <AnimatePresence mode="sync">
+            <AnimatePresence>
               {todos &&
                 todos.map((todo, i) => {
                   return (
