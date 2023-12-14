@@ -1,8 +1,7 @@
-import { useRaisedShadow } from "@/lib/hooks/use-raised-shadow";
 import type { Todo } from "@/lib/types";
 import { cn } from "@/lib/utils";
 import dayjs from "dayjs";
-import { Reorder, motion, useDragControls } from "framer-motion";
+import { motion } from "framer-motion";
 import { BadgeX, Loader2 } from "lucide-react";
 import React, {
   Dispatch,
@@ -13,8 +12,6 @@ import React, {
 } from "react";
 import toast from "react-hot-toast";
 import { Checkbox } from "./ui/checkbox";
-import { Skeleton } from "./ui/skeleton";
-
 interface Props {
   todo: Todo;
   i: number;
