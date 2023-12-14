@@ -69,7 +69,7 @@ const ReorderItem: FC<Props> = ({ todo, i, todos, setTodos }) => {
         setIsUpdating(false);
       }
     },
-    [isCompleted]
+    [setTodos, isCompleted]
   );
 
   const handleDeleteTodo = useCallback(
@@ -103,7 +103,7 @@ const ReorderItem: FC<Props> = ({ todo, i, todos, setTodos }) => {
       transition={{
         duration: 0.3,
         delay: i * 0.05,
-        ease: [0.87, 0, 0.13, 1],
+        // ease: [0.87, 0, 0.13, 1],
       }}
       key={todo?.id}
       className={cn(

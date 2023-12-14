@@ -24,7 +24,7 @@ function Navbar({}: Props) {
           <div className="flex items-center">
             <Link
               href={"/"}
-              className="text-2xl font-bold dark:text-amethyst-600"
+              className="text-2xl font-bold dark:text-amethyst-500"
             >
               UiTodo
             </Link>
@@ -34,7 +34,7 @@ function Navbar({}: Props) {
             {status === "unauthenticated" && (
               <Link
                 href={"/api/auth/signin"}
-                className="px-6 py-2 text-sm rounded-lg text-white bg-amethyst-600 dark:bg-amethyst-600 dark:text-zinc-900 hover:bg-amethyst-700 active:bg-amethyst-600 active:scale-95"
+                className="px-6 py-2 text-sm rounded-lg text-white bg-black dark:bg-amethyst-600 dark:text-zinc-900 hover:bg-zinc-800 active:bg-zinc-700 active:scale-95"
               >
                 Login
               </Link>
@@ -44,7 +44,7 @@ function Navbar({}: Props) {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="rounded-3xl px-2 sm:pl-5 sm:pr-1 sm:py-1 h-auto gap-3"
+                    className="rounded-3xl px-2 sm:pl-5 sm:pr-1 sm:py-1 h-auto gap-3 dark:text-zinc-200"
                   >
                     <span className="hidden sm:block">{session.user.name}</span>
                     <Avatar className="h-8 w-8 rounded-2xl">

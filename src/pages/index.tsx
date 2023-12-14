@@ -54,7 +54,7 @@ const Home = () => {
     if (session?.user) {
       setLoading(true);
       if (!todo) {
-        toast.error("Todo cannot be empty");
+        toast.error("Type something to add");
         setLoading(false);
         return;
       }
@@ -177,7 +177,7 @@ const Home = () => {
                 onKeyDown={handleChangeKeyboard}
               />
               <div
-                className="absolute inset-y-1.5 transform font-medium bg-amethyst-600 text-xs select-none hover:bg-amethyst-700 text-amethyst-100 px-5 flex justify-center items-center right-1.5 rounded-[99px] cursor-pointer dark:bg-amethyst-700 dark:text-zinc-900 active:scale-95"
+                className="absolute inset-y-1.5 transform font-medium bg-amethyst-600 text-xs select-none hover:bg-amethyst-700 text-amethyst-100 px-6 flex justify-center items-center right-1.5 rounded-[99px] cursor-pointer dark:bg-amethyst-700 dark:text-zinc-900 active:scale-95"
                 onClick={addTodo}
               >
                 {loading ? (
