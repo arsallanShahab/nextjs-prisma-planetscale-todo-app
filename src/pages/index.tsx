@@ -72,7 +72,7 @@ const Home = () => {
         setLoading(false);
       }
     }
-  }, [todo]);
+  }, [todo, session?.user, todos]);
 
   const fetchTodos = useCallback(
     async ({ setTodos }: FetchTodosProps) => {
@@ -138,7 +138,7 @@ const Home = () => {
             layout="size"
             className="w-full relative h-full origin-top"
           >
-            <AnimatePresence>
+            <AnimatePresence mode="sync">
               {todos &&
                 todos.map((todo, i) => {
                   return (
