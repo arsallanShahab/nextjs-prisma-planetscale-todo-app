@@ -20,7 +20,7 @@ function Navbar({}: Props) {
   return (
     <div className="w-full">
       <div className="max-w-screen-2xl mx-auto px-5 sm:px-10">
-        <div className="flex justify-between items-center py-5">
+        <div className="flex justify-between items-center pt-5 pb-2.5 sm:py-5">
           <div className="flex items-center">
             <h3 className="text-2xl font-bold dark:text-amethyst-600">
               UiTodo
@@ -44,20 +44,15 @@ function Navbar({}: Props) {
                     className="rounded-3xl px-2 sm:pl-5 sm:pr-1 sm:py-1 h-auto gap-3"
                   >
                     <span className="hidden sm:block">{session.user.name}</span>
-                    <Button
-                      variant="ghost"
-                      className="relative h-8 w-8 rounded-2xl"
-                    >
-                      <Avatar className="h-8 w-8 rounded-2xl">
-                        <AvatarImage
-                          src={session.user.image as string}
-                          alt={session.user.name as string}
-                        />
-                        <AvatarFallback>
-                          {session.user.name?.charAt(0).toUpperCase()}
-                        </AvatarFallback>
-                      </Avatar>
-                    </Button>
+                    <Avatar className="h-8 w-8 rounded-2xl">
+                      <AvatarImage
+                        src={session.user.image as string}
+                        alt={session.user.name as string}
+                      />
+                      <AvatarFallback>
+                        {session.user.name?.charAt(0).toUpperCase()}
+                      </AvatarFallback>
+                    </Avatar>
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent

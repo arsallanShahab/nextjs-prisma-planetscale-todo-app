@@ -23,7 +23,7 @@ export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
           },
         }}
         containerStyle={{
-          right: "4rem",
+          right: "2rem",
           top: "6rem",
         }}
       />

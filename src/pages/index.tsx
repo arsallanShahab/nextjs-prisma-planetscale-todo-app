@@ -28,7 +28,7 @@ interface FetchTodosProps {
 
 const Home = () => {
   const [todo, setTodo] = useState<string>("");
-  const [todos, setTodos] = useState<Todo[]>([]);
+  const [todos, setTodos] = useState<Todo[]>(null as unknown as Todo[]);
   const [user, setUser] = useState<User>();
   const [loading, setLoading] = useState<boolean>(false);
   const [userLoading, setUserLoading] = useState<boolean>(false);
@@ -123,9 +123,9 @@ const Home = () => {
   }
 
   return (
-    <main className="flex flex-col items-center justify-stretch h-full p-5 overflow-x-hidden overflow-y-auto scrollbar">
+    <main className="flex flex-col items-center justify-stretch h-full px-5 sm:p-5 overflow-x-hidden overflow-y-auto scrollbar">
       <div className="relative w-full max-w-4xl h-full overflow-y-auto overflow-x-hidden pb-36 sm:pb-44">
-        <div className="relative flex flex-col justify-start items-center gap-10 w-full sm:px-7 py-2.5 min-h-full">
+        <div className="relative flex flex-col justify-start items-center gap-10 w-full sm:px-7 sm:py-2.5 min-h-full">
           {todosLoading && (
             <div className="flex flex-col justify-start items-center w-full gap-5">
               {Array.from(Array(5)).map((_, i) => (
@@ -133,31 +133,30 @@ const Home = () => {
               ))}
             </div>
           )}
-          <AnimatePresence>
-            <motion.div
-              layout="size"
-              className="w-full relative h-full origin-top"
-            >
-              <AnimatePresence>
-                {todos &&
-                  todos.map((todo, i) => {
-                    return (
-                      <ReorderItem
-                        i={i}
-                        setTodos={setTodos}
-                        todo={todo}
-                        todos={todos}
-                        key={todo?.id}
-                      />
-                    );
-                  })}
-              </AnimatePresence>
-            </motion.div>
-          </AnimatePresence>
+
+          <motion.div
+            layout="size"
+            className="w-full relative h-full origin-top"
+          >
+            <AnimatePresence>
+              {todos &&
+                todos.map((todo, i) => {
+                  return (
+                    <ReorderItem
+                      i={i}
+                      setTodos={setTodos}
+                      todo={todo}
+                      todos={todos}
+                      key={todo?.id}
+                    />
+                  );
+                })}
+            </AnimatePresence>
+          </motion.div>
         </div>
       </div>
       <div className="fixed bottom-0 inset-x-0 w-full h-48 z-[100] bg-gradient-to-t dark:from-zinc-900 from-white to-transparent"></div>
-      <div className="w-full fixed bottom-10 sm:bottom-24 inset-x-0 flex justify-center z-[200] px-2.5">
+      <div className="w-full fixed bottom-10 sm:bottom-24 inset-x-0 flex justify-center z-[200] px-5">
         <div className="max-w-xl mx-auto w-full z-[300]">
           {(loading || todosLoading || userLoading) && (
             <div className="relative flex justify-center items-center w-full py-8">
@@ -172,13 +171,13 @@ const Home = () => {
                 placeholder={
                   todos?.length ? "Need more things to do?" : "Plan your day :)"
                 }
-                className="w-full py-8 px-6 text-base rounded-xl bg-amethyst-50 dark:bg-zinc-700 text-amethyst-600 placeholder:text-amethyst-600 dark:text-amethyst-300 shadow-xl shadow-amethyst-300 border border-amethyst-200 dark:shadow-zinc-900 placeholder:select-none pr-[120px]"
+                className="w-full py-8 px-6 text-base rounded-[99px] bg-amethyst-50 dark:bg-zinc-700 text-amethyst-600 placeholder:text-amethyst-600 dark:text-amethyst-300 shadow-xl shadow-amethyst-300 border border-amethyst-200 dark:shadow-zinc-900 placeholder:select-none pr-[120px]"
                 value={todo}
                 onChange={handleChange}
                 onKeyDown={handleChangeKeyboard}
               />
               <div
-                className="absolute inset-y-1.5 transform font-medium bg-amethyst-600 text-sm hover:bg-amethyst-700 text-amethyst-100 px-4 flex justify-center items-center right-1.5 rounded-xl cursor-pointer dark:bg-amethyst-700 dark:text-zinc-900 active:scale-95"
+                className="absolute inset-y-1.5 transform font-medium bg-amethyst-600 text-xs select-none hover:bg-amethyst-700 text-amethyst-100 px-5 flex justify-center items-center right-1.5 rounded-[99px] cursor-pointer dark:bg-amethyst-700 dark:text-zinc-900 active:scale-95"
                 onClick={addTodo}
               >
                 {loading ? (
